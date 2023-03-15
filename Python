@@ -1,0 +1,43 @@
+import random
+symbols = ["@",'#','*']
+
+while True:
+    tokens = 100
+    print("welcome to the slots game made by twitch.tv/starboundstreams")
+    while tokens > 0:
+        print("you have", tokens,"tokens.")
+        try:
+            bet = int(input("Bet amount: "))
+        except:
+            print("Please enter a whole number of tokens.")
+            continue
+        if bet > tokens:
+            print("Not enough tokens dumbass.")
+        else:
+            tokens -= bet 
+            sq_one = random.choice(symbols)
+            sq_two = random.choice(symbols)
+            sq_three = random.choice(symbols)
+
+            print()
+
+            print("|", sq_one,"|", sq_two,"|", sq_three)
+            print("-------------")
+            print("|", random.choice(symbols),"|", random.choice(symbols),"|", random.choice(symbols))
+            print("-------------")
+            print("|", random.choice(symbols),"|", random.choice(symbols),"|", random.choice(symbols))
+            print()
+
+            if sq_one == sq_two and sq_two == sq_three:
+                amountwon = bet*2
+                print("You won", amountwon, "tokens." )
+                tokens += amountwon 
+            else: 
+                print("YOU SUCK TRY AGAIN")
+
+    print("You are out of tokens bitch.")
+    play_again = input("Play again? (y/n)")
+    if play_again.lower() == 'n':
+        break
+
+print("Thanks for playing."
