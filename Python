@@ -33,9 +33,9 @@ while True:
                 print("You won", amountwon, "tokens." )
                 tokens += amountwon 
             else: 
-                print("YOU SUCK TRY AGAIN")
+                print("YOU LOSE TRY AGAIN")
 
-    print("You are out of tokens bitch.")
+    print("You are out of tokens.")
     play_again = input("Play again? (y/n)")
     if play_again.lower() == 'n':
         break
